@@ -1,6 +1,6 @@
 /*Name:Faatin Nur Husna binti Izmir 
 ID:22010085 
-LAB CPP1 
+Group 2
 heehheheheh ads*/
 #include <iostream>
 #include <string>
