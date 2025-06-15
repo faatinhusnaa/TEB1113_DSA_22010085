@@ -1,7 +1,7 @@
 
-// Faatin Nur Husna binti Izmir
+/* Faatin Nur Husna binti Izmir
 22010085
-Rotate Mtrix, Easy Exercise//
+Rotate Mtrix, Easy Rotate Matrix*/
 
 using namespace std;
 
