@@ -11,3 +11,4 @@ ID: 22010085
 | 5   | - [Lab 5 Stack](https://github.com/faatinhusnaa/TEB1113_DSA_22010085/blob/main/Lab%205/22010085_L5_Stack.cpp) |
 | 6   | - [Lab 6 Queue](https://github.com/faatinhusnaa/TEB1113_DSA_22010085/blob/main/Lab%206/22010085_L6_Queue.cpp)<br> - [Lab 6 Circular Queue](https://github.com/faatinhusnaa/TEB1113_DSA_22010085/blob/main/Lab%206/22010085_L6_CircularQueue.cpp)<br> - [Lab 6 Array Queue](https://github.com/faatinhusnaa/TEB1113_DSA_22010085/blob/main/Lab%206/22010085_L6_ArrayQueue.cpp)<br> - [Lab 6 Array Circular Queue](https://github.com/faatinhusnaa/TEB1113_DSA_22010085/blob/main/Lab%206/22010085_L6_ArrayCircularQueue.cpp) |
 | 7   | -[Lab 7 Trees](https://github.com/faatinhusnaa/TEB1113_DSA_22010085/blob/main/L7/Trees.cpp)
+| Project | -[Project](https://github.com/faatinhusnaa/TEB1113_DSA_22010085/tree/main/Project) |
