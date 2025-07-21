@@ -1,0 +1,296 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  ActiveControl = MenuList
+  Caption = 'Form2'
+  ClientHeight = 776
+  ClientWidth = 688
+  Fill.Kind = Gradient
+  Fill.Gradient.Points = <
+    item
+      Color = xFFF1AFD8
+      Offset = 0.000000000000000000
+    end
+    item
+      Color = claWhite
+      Offset = 1.000000000000000000
+    end>
+  Fill.Gradient.StartPosition.X = 0.500000000000000000
+  Fill.Gradient.StartPosition.Y = 1.000000000000000000
+  Fill.Gradient.StopPosition.X = 0.499999970197677600
+  Fill.Gradient.StopPosition.Y = 0.000000000000000000
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Input: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 136.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 297.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    OnKeyDown = InputKeyDown
+  end
+  object Search: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 136.000000000000000000
+    Position.Y = 158.000000000000000000
+    Size.Width = 297.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object SearchLabel: TLabel
+    Position.X = 136.000000000000000000
+    Position.Y = 134.000000000000000000
+    Text = 'Search:'
+    TabOrder = 2
+  end
+  object InputLabel: TLabel
+    Position.X = 136.000000000000000000
+    Position.Y = 79.000000000000000000
+    Text = 'Input Data:'
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Position.X = 456.000000000000000000
+    Position.Y = 104.000000000000000000
+    TabOrder = 4
+    Text = 'Enter'
+    TextSettings.Trimming = None
+    OnClick = Button1Click
+  end
+  object DataBox: TListBox
+    Position.X = 42.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 552.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    ListStyle = Horizontal
+    OnItemClick = DataBoxItemClick
+    Viewport.Width = 548.000000000000000000
+    Viewport.Height = 37.000000000000000000
+  end
+  object SearchButton: TButton
+    Position.X = 456.000000000000000000
+    Position.Y = 158.000000000000000000
+    TabOrder = 6
+    Text = 'Search'
+    TextSettings.Trimming = None
+    OnClick = SearchButtonClick
+  end
+  object ResultBox: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    ReadOnly = True
+    TextSettings.WordWrap = True
+    Position.X = 40.000000000000000000
+    Position.Y = 504.000000000000000000
+    Size.Width = 554.000000000000000000
+    Size.Height = 236.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'StepMemoStyle1'
+    TabOrder = 7
+    Viewport.Width = 550.000000000000000000
+    Viewport.Height = 232.000000000000000000
+  end
+  object Z: TLabel
+    StyledSettings = []
+    Position.X = 40.000000000000000000
+    Position.Y = 34.000000000000000000
+    Size.Width = 554.000000000000000000
+    Size.Height = 47.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Snap ITC'
+    TextSettings.Font.Size = 40.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000200000004000000}
+    TextSettings.FontColor = claDeeppink
+    TextSettings.HorzAlign = Center
+    Text = 'Binary VS Linear'
+    TabOrder = 8
+  end
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 688.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    object MenuButton: TSpeedButton
+      Align = Right
+      Position.X = 608.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 81.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'drawertoolbutton'
+      Text = 'MenuButton'
+      TextSettings.Trimming = None
+      OnClick = MenuButtonClick
+    end
+    object MenuPopup: TPopup
+      Align = Fit
+      Placement = Left
+      PlacementTarget = MenuButton
+      Size.Width = 125.492950439453100000
+      Size.Height = 81.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object MenuList: TListBox
+        Align = Client
+        Size.Width = 125.492950439453100000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 121.500000000000000000
+        Viewport.Height = 77.000000000000000000
+        object GroupItem: TListBoxItem
+          TextSettings.FontColor = claDeeppink
+          StyledSettings = [Family, Size, Style, Other]
+          TabOrder = 0
+          Text = 'Group Info'
+          OnClick = GroupItemClick
+        end
+        object BinaryItem: TListBoxItem
+          TextSettings.FontColor = claDeeppink
+          StyledSettings = [Family, Size, Style, Other]
+          Position.Y = 19.000000000000000000
+          TabOrder = 1
+          Text = 'Binary Search'
+        end
+        object LinearItem: TListBoxItem
+          TextSettings.FontColor = claDeeppink
+          StyledSettings = [Family, Size, Style, Other]
+          Position.Y = 38.000000000000000000
+          TabOrder = 2
+          Text = 'Linear Search'
+        end
+        object ExitMenuItem: TListBoxItem
+          TextSettings.FontColor = claDeeppink
+          StyledSettings = [Family, Size, Style, Other]
+          Position.Y = 57.000000000000000000
+          TabOrder = 3
+          Text = 'Exit Menu'
+          OnClick = ExitMenuItemClick
+        end
+      end
+    end
+  end
+  object LinearInfo: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      'a method for finding a particular value in a list that consists'
+      ' of checking every one of its elements, one at a time and in'
+      ' sequence, until the desired'#160'one'#160'is'#160'found.')
+    ReadOnly = True
+    StyledSettings = [Family, Size]
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.FontColor = claDeeppink
+    Locked = True
+    Position.X = 312.000000000000000000
+    Position.Y = 49.000000000000000000
+    Size.Width = 337.000000000000000000
+    Size.Height = 72.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Visible = False
+    Viewport.Width = 333.000000000000000000
+    Viewport.Height = 68.000000000000000000
+  end
+  object BinaryInfo: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      'In Binary Search, each time we divide array into two '
+      'equal half and compare middle element with search '
+      'element.')
+    ReadOnly = True
+    StyledSettings = [Family, Size]
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.FontColor = claDeeppink
+    Locked = True
+    Position.X = 312.000000000000000000
+    Position.Y = 49.000000000000000000
+    Size.Width = 328.000000000000000000
+    Size.Height = 77.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Visible = False
+    Viewport.Width = 324.000000000000000000
+    Viewport.Height = 73.000000000000000000
+  end
+  object GroupInfo: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      '1. Faatin Nur Husna Binti Izmir (22010085)'
+      '2. Nor Diana Binti Aziz (22010477)'
+      '3. Muhammad Isfahann Syakir Bin Shahrum (22010486)'
+      '4. Muhammad Ammar Haziq Bin Abdul Malek (22010458)')
+    ReadOnly = True
+    StyledSettings = [Family, Size]
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.FontColor = claDeeppink
+    Locked = True
+    Position.X = 312.000000000000000000
+    Position.Y = 67.000000000000000000
+    Size.Width = 328.000000000000000000
+    Size.Height = 83.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    Visible = False
+    Viewport.Width = 324.000000000000000000
+    Viewport.Height = 79.000000000000000000
+  end
+  object LinearBoxLayout: TScrollBox
+    ClipChildren = True
+    Position.X = 42.000000000000000000
+    Position.Y = 281.000000000000000000
+    Size.Width = 247.000000000000000000
+    Size.Height = 184.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Viewport.Width = 247.000000000000000000
+    Viewport.Height = 184.000000000000000000
+  end
+  object BinaryBoxLayout: TScrollBox
+    ClipChildren = True
+    Position.X = 352.000000000000000000
+    Position.Y = 281.000000000000000000
+    Size.Width = 242.000000000000000000
+    Size.Height = 184.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Viewport.Width = 242.000000000000000000
+    Viewport.Height = 184.000000000000000000
+  end
+  object Label1: TLabel
+    Position.X = 42.000000000000000000
+    Position.Y = 188.000000000000000000
+    Text = 'Data:'
+    TabOrder = 16
+  end
+  object LinearSearchLabel: TLabel
+    Position.X = 42.000000000000000000
+    Position.Y = 257.000000000000000000
+    Text = 'Linear Search'
+    TabOrder = 17
+  end
+  object BinarySearchLabel: TLabel
+    Position.X = 352.000000000000000000
+    Position.Y = 256.000000000000000000
+    Text = 'Binary Search'
+    TabOrder = 18
+  end
+end
