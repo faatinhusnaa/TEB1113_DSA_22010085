@@ -34,17 +34,74 @@ void __fastcall TForm2::Button1Click(TObject *Sender)
 		ShowMessage("Please enter data before adding.");
 		return;
 	}
-	DataBox->Items->Add(datatext);
+
+	TListBoxItem* item = new TListBoxItem(DataBox);
+	item->Parent = DataBox;
+	item->Text = datatext;
+
+	// Disable styling to apply custom font and sizing
+	item->StyledSettings = TStyledSettings();
+
+	// Use monospace font for consistent number widths
+	item->Font->Family = "Courier New";
+	item->Font->Size = 12;
+
+	// Measure text width and set item width accordingly
+	float textWidth = item->Canvas->TextWidth(item->Text);
+	item->Width = textWidth + 12;  // Small padding
+	item->Height = 28;
+
+	// Remove extra margins (optional)
+	item->Margins->Left = 2;
+	item->Margins->Right = 2;
+
+	// Align text nicely
+	item->TextSettings->HorzAlign = TTextAlign::Center;
+	item->TextSettings->VertAlign = TTextAlign::Center;
+	item->TextSettings->WordWrap = false;
+
 	Input->Text = "";
 }
+
+
 //---------------------------------------------------------------
 
 // Handle Enter key press in Input box
 void __fastcall TForm2::InputKeyDown(TObject *Sender, WORD &Key, System::WideChar &KeyChar, TShiftState Shift)
 {
 	if (Key == VK_RETURN && !Input->Text.IsEmpty()) {
-		DataBox->Items->Add(Input->Text);
-		Input->Text = "";
+		String datatext = Input->Text.Trim();
+	if (datatext.IsEmpty()) {
+		ShowMessage("Please enter data before adding.");
+		return;
+	}
+
+	TListBoxItem* item = new TListBoxItem(DataBox);
+	item->Parent = DataBox;
+	item->Text = datatext;
+
+	// Disable styling to apply custom font and sizing
+	item->StyledSettings = TStyledSettings();
+
+	// Use monospace font for consistent number widths
+	item->Font->Family = "Courier New";
+	item->Font->Size = 12;
+
+	// Measure text width and set item width accordingly
+	float textWidth = item->Canvas->TextWidth(item->Text);
+	item->Width = textWidth + 12;  // Small padding
+	item->Height = 28;
+
+	// Remove extra margins (optional)
+	item->Margins->Left = 2;
+	item->Margins->Right = 2;
+
+	// Align text nicely
+	item->TextSettings->HorzAlign = TTextAlign::Center;
+	item->TextSettings->VertAlign = TTextAlign::Center;
+	item->TextSettings->WordWrap = false;
+
+	Input->Text = "";
 	}
 }
 //---------------------------------------------------------------
@@ -224,7 +281,7 @@ void __fastcall TForm2::SearchButtonClick(TObject *Sender)
 	ResultBox->Lines->Add(" - Best Case    : O(1)");
 	ResultBox->Lines->Add(" - Worst Case   : O(log n)");
 	ResultBox->Lines->Add(" - Average Case : O(log n)");
-	ResultBox->Lines->Add(" - Space        : O(n) (due to copy + sort)");
+	ResultBox->Lines->Add(" - Space        : O(n)");
 
 //---------------------------------------------------------------
 	ResultBox->Lines->Add("Estimated Theoretical Complexity:");
